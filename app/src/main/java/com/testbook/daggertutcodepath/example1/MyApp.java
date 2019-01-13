@@ -1,6 +1,8 @@
-package com.testbook.daggertutcodepath;
+package com.testbook.daggertutcodepath.example1;
 
 import android.app.Application;
+
+import com.testbook.daggertutcodepath.example1.DaggerAppComponent;
 
 public class MyApp extends Application {
     private AppComponent mAppComponent;

@@ -1,4 +1,4 @@
-package com.testbook.daggertutcodepath;
+package com.testbook.daggertutcodepath.example1;
 
 import android.app.Application;
 import android.content.SharedPreferences;
