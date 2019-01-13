@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import androidx.appcompat.app.AppCompatActivity;
 import okhttp3.OkHttpClient;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Inject OkHttpClient mOkHttpClient;
+    @Inject @Named("cached") OkHttpClient mOkHttpClient;
+    @Inject @Named("non_cached") OkHttpClient mOkHttpClient2;
     @Inject SharedPreferences sharedPreferences;
 
     @Override

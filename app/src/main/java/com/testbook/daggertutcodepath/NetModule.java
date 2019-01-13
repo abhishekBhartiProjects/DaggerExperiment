@@ -8,6 +8,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 
@@ -50,11 +51,20 @@ public class NetModule {
     }
 
     @Provides
+    @Named("cached")
     @Singleton
-    OkHttpClient provideOkHttpClient(Cache cache) {
+    OkHttpClient provideOkHttpClient1(Cache cache) {
         OkHttpClient.Builder client = new OkHttpClient.Builder();
         client.cache(cache);
         return client.build();
+    }
+
+    @Provides
+    @Named("non_cached")
+    @Singleton
+    OkHttpClient provideOkHttpClient2(){
+        OkHttpClient client = new OkHttpClient();
+        return client;
     }
 
     @Provides
